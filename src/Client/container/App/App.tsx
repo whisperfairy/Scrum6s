@@ -55,18 +55,7 @@ export default class App extends PureComponent {
         console.log('App' + 'rendering');
         return (
             <div className="Chart_List" >
-              <div className="charts_flex">
 
-              </div>
-              <div className="charts_flex">
-                  <LineChartReal></LineChartReal>
-              </div>
-              <div className="charts_flex">
-                  <LineChartReal></LineChartReal>
-              </div>
-              <div className="charts_flex"></div>
-              <div className="charts_flex"></div>
-              <div className="charts_flex"></div>
             </div>
           
         )
