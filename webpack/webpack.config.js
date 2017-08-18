@@ -32,19 +32,17 @@ var baseConfig = {
     },
     module:{
         rules:[   {
-                test: /\.tsx?$/,
+
+        },{
+                test: /\.js[x]?$/,
                 loaders: [
-                    "awesome-typescript-loader"
+                    "babel-loader"
                 ],
                 exclude: path.resolve(config.dirname, 'node_modules'),
                 include: path.resolve(config.dirname, "src"),
             },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            },{
             test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
             loader: 'url-loader?limit=1&name=/assets/imgs/[name].[ext]'
         }
@@ -68,6 +66,7 @@ var PROD_Config =merge(baseConfig,{
     },
     module:{
         rules:[
+
             {
                 test: /\.s?css$/,
                 use: ExtractTextPlugin.extract({
@@ -113,6 +112,19 @@ const DEV_Config=merge(baseConfig, {
     },
     module: {
         rules: [
+            {
+                enforce: "pre",
+                test: /\.js[x]?$/,
+                include:config.appDir,
+                exclude: /node_modules/,
+                options:{fix:true},
+                loader: "eslint-loader"
+            },
+            {
+                enforce: "pre",
+                test: /\.js[x]?$/,
+                loader: "source-map-loader"
+            },
             {
                 test: /\.s?css$/,
                 use: [

@@ -10,6 +10,6 @@
 const path = require('path');
 const {Environment:EnumEnv,config} = require('../config/config');
 module.exports.Entrys={
-    client:path.resolve(config.appDir,'index.tsx'),
+    client:path.resolve(config.appDir,'index.jsx'),
     vendor: ['moment','react','react-router-dom','react-dom','axios']
 }
