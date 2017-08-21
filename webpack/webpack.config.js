@@ -117,7 +117,6 @@ const DEV_Config=merge(baseConfig, {
                 test: /\.js[x]?$/,
                 include:config.appDir,
                 exclude: /node_modules/,
-                options:{fix:true},
                 loader: "eslint-loader"
             },
             {
