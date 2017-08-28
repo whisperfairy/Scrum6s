@@ -24,7 +24,7 @@ var baseConfig = {
     entry: Entrys,
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+        extensions: [".webpack.js", ".web.js", ".jsx", ".js"]
     },
     output: {
         filename: '[name].js',
