@@ -14,19 +14,8 @@ const send = require('koa-send');
 const cors = require('kcors');
 const app = new koa();
 const router = new koaRouter();
-
-const user = require('./modal/userModal').user;
-router.get('/api/user',async function (ctx,next){
-  const Users= await user.findAll();
-  ctx.body={
-      Users
-  };
-})
-router.put('/api/user',async function (ctx,next){
-    await user.create({ username: ctx.request.body.username,password:ctx.request.body.password });
-    ctx.body={
-        status:200
-    }
+router.get('/',async function (ctx,next){
+    ctx.body='hello world';
 })
 app.use(async function (ctx, next) {
     const start = new Date();
@@ -50,4 +39,4 @@ app.use(koaBody())
 // response
 app.use(router.routes());
 app.use(router.allowedMethods())
-app.listen(3001);
+app.listen(3000);

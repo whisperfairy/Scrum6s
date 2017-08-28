@@ -21,7 +21,6 @@
     "plugins": [
         "react"
     ],
-    "extends": ["plugin:react/recommended"],
     "rules": {
         "react/jsx-uses-vars": 2,
         "no-alert": 0,//禁止使用alert confirm prompt
